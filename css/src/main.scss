@@ -4,7 +4,9 @@
 $yellow: #F3C25B;
 $teal: #83BAB2;
 $green: #8B9E74;
-$red: #BE1E2D;
+$red: #A61E2F;
+$navy: #3B5074;
+$sky: #8AD7F8;
 $grey: #414042;
 
 
@@ -34,33 +36,31 @@ $grey: #414042;
 // header styles
 header {
 	position: relative;
-	background: url(../img/bg-header.jpg) center center no-repeat;
-	background-size: cover;
-	padding: 25px 0;
+	background: url(../img/bg-header.jpg) top center repeat-x;
 	text-align: center;
 
-	@include respond-to( 600px ) {
-		text-align: right;
-	}
-
-	@include respond-to( 768px ) {
-		padding: 50px 0;
+	&:after {
+		content: "";
+		position: absolute;
+		height: 29%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: url(../img/header-wave.png) center center repeat-x;
+		background-size: contain;
 	}
 }
 
 
 h1 {
-	background-color: $red;
-	color: white;
-	@include font-title;
-	text-align: center;
-	padding: 20px 0;
+	padding: 30px 20px;
+	font-size: 2.5em;
 }
 
 
 // wrap div
 .wrap {
-	max-width: 1100px;
+	max-width: 122	0px;
 	margin: 0 auto;
 	position: relative;
 	@include clearfix;
@@ -81,15 +81,15 @@ h1 {
 // tool styles
 .tool {
 	padding: 0;
-	text-align: center;
+	text-align: left;
 	
 	@include respond-to( 768px ) {
 		padding: 20px 40px;
 	}
 
 	.calculator {
-		background-color: $red;
-		color: white;
+		background-color: $navy;
+		color: $sky;
 		padding: 20px 15px 30px;
 		margin-top: 30px;
 		@include font-title;
@@ -97,12 +97,21 @@ h1 {
 		button, input[type=submit], .btn {
 			width: 100%;
 			margin: 0 auto;
+			font-size: 2em;
+			background-color: $red;
+			border: 0;
+			border-radius: 20px;
+
+			@include respond-to( 768px ) {
+				font-size: 2.5em;
+			}
 		}
 		
 		@include respond-to( 768px ) { 
 			padding: 30px 20px 40px; 
 			border-radius: 20px;
 			font-size: 1.2em;
+			line-height: 1.7em;
 		}
 
 		@include respond-to( 1024px ) {
