@@ -106,6 +106,17 @@ input[type=submit], button, .btn {
 		color: $yellow;
 	}
 	
+	&.apply {
+		font-size: 2em;
+		line-height: 1.7em;
+		background: $red;
+
+		@include respond-to( 768px ) {
+			width: 50%;
+			margin: 10px auto;
+		}
+	}
+
 	&:after {
 		content: "";
 		position: absolute;
